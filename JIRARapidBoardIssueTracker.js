@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         JIRA Rapid Board Issue Tracker
 // @namespace    http://www.kalee.hu
-// @version      0.0.1
+// @version      0.0.2
 // @description  Tracking issues on JIRA Rapid Board.
 // @author       Moondancer83
 // @homepage     https://github.com/Moondancer83/JIRARapidBoardIssueTracker
+//
 // @include      /jira.*/secure/RapidBoard.jspa*/
-// @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js
+//  @grant        none
 // ==/UserScript==
 (function() {
     'use strict';
@@ -24,6 +25,7 @@
                     ".ghx-badge-group {zoom: 145%;} " +
                     "</style>");
     }
+    
     function issueCounter() {
         var sprintIssues = $(".ghx-backlog-container.ghx-sprint-active.js-sprint-container .js-issue.ghx-issue-compact").length;
         var issuesToGo = $(".ghx-backlog-container.ghx-sprint-active.js-sprint-container .js-issue.ghx-issue-compact:not(.ghx-done)").length;
